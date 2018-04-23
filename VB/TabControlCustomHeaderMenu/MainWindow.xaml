@@ -1,0 +1,35 @@
+﻿<Window x:Class="TabControlCustomHeaderMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <dx:DXTabControl x:Name="tabControl" DataContext="1">
+            <dx:DXTabControl.View>
+                <dx:TabControlStretchView HideButtonShowMode="InAllTabs" ShowHeaderMenu="True" ShowVisibleTabItemsInHeaderMenu="False" ShowHiddenTabItemsInHeaderMenu="True" ShowDisabledTabItemsInHeaderMenu="True">
+                    <dx:TabControlStretchView.HeaderMenuCustomizations>
+                        <dxb:InsertAction Index="0">
+                            <dxb:BarCheckItem CloseSubMenuOnClick="False" Content="Is Selected Item Enabled" IsChecked="{Binding ElementName=tabControl, Path=SelectedContainer.IsEnabled, Mode=TwoWay}"/>
+                        </dxb:InsertAction>
+                        <dxb:InsertAction Index="1">
+                            <dxb:BarButtonItem CloseSubMenuOnClick="False" Content="Close Selected Item">
+                                <dxmvvm:Interaction.Behaviors>
+                                    <dxmvvm:MethodToCommandBehavior Source="{Binding ElementName=tabControl, Path=SelectedContainer}" Method="Close"/>
+                                </dxmvvm:Interaction.Behaviors>
+                            </dxb:BarButtonItem>
+                        </dxb:InsertAction>
+                        <dxb:InsertAction Index="2">
+                            <dxb:BarItemSeparator/>
+                        </dxb:InsertAction>
+                    </dx:TabControlStretchView.HeaderMenuCustomizations>
+                </dx:TabControlStretchView>
+            </dx:DXTabControl.View>
+            <dx:DXTabItem Header="Item1" />
+            <dx:DXTabItem Header="Item2" />
+            <dx:DXTabItem Header="Item3" />
+            <dx:DXTabItem Header="Item4" />
+        </dx:DXTabControl>
+    </Grid>
+</Window>

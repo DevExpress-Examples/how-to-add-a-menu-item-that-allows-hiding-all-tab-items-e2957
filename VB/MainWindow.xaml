@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApplication3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"        
+        Title="MainWindow" Height="631" Width="674">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="TabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <dx:DXTabControl Name="DXTabControl" SelectedIndex="1">
+            <dx:DXTabControl.View>
+                <dx:TabControlScrollView AllowHideTabItems="True" ShowHeaderMenu="True" ShowHiddenTabItemsInHeaderMenu="True" ShowVisibleTabItemsInHeaderMenu="False" />
+            </dx:DXTabControl.View>
+            <dx:DXTabItem x:Name="DXTabItem" Header="Hide all tabs" Visibility="Collapsed" />
+            <dx:DXTabItem Header="Tab 1">
+                <Grid />
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="Tab 2">
+                <Grid />
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="Tab 3">
+                <Grid />
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="Tab 4">
+                <Grid />
+            </dx:DXTabItem>            
+        </dx:DXTabControl>
+    </Grid>
+</Window>

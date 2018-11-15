@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/TabControlCustomHeaderMenu/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/TabControlCustomHeaderMenu/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/TabControlCustomHeaderMenu/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/TabControlCustomHeaderMenu/MainWindow.xaml))
+<!-- default file list end -->
 # How to add a menu item that allows hiding all tab items
 
 
